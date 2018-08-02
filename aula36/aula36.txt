@@ -1,0 +1,5 @@
+model - area onde moram todos os codigos e classes q falam com o banco de dados
+
+view - exibe os dados do site, parte visual
+
+controller - onde mora toda programação, onde terão todas as regras que controlam o site (regra de negócio)
