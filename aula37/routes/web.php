@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/filmes/{id}', 'FilmeController@procurarFilmeId');
+
+Route::get('/filmess/{nome}', 'FilmeController@procurarFilmeNome');
+
+Route::get('/adicionarFilme/{filme}', 'FilmeController@adicionarFilme');
+
+Route::get('/listarFilmes', 'FilmeController@listarFilmes');
+
+Route::get('/atores', 'AtorController@directory');
+
+Route::get('/ator/{id}', 'AtorController@show');

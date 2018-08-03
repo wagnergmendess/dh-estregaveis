@@ -69,9 +69,11 @@
             <div class="content">
                 <div class="title m-b-md">
                     <ol>
-                        @foreach($todosFilmes as $filme)
-                        <li>{{ $filme }}</li>
-                        @endforeach
+                        @foreach ($atores as $ator)
+                        <li>
+                            {{$ator->first_name}}
+                        </li>
+                        @endforeach                   
                     </ol>
                 </div>
             </div>
