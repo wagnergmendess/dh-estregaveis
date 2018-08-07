@@ -14,8 +14,8 @@ class AtorController extends Controller
         return view('atores')->with('atores', $atores);
     }
 
-    public function show($id){
-        $ator = actors::where('actors.id', '=', $id)->get();
+    public function show(){
+        $ator = actors::all()->get();
 
         return view('ator')->with('ator', $ator);
     }
