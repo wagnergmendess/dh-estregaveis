@@ -19,7 +19,7 @@ class FormController extends Controller
 
     public function editForm($id){
         $filme = Movie::find($id);
-        return view('editForm')->with('filmes', $filme);
+        return view('editForm')->with('filme', $filme);
     }
 
     public function update(Request $request, $id){
