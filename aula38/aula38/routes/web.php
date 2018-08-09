@@ -15,10 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Rotas de Filmes
 Route::get('/filmes', 'FormController@form');
+Route::post('/validar', 'FormController@validar');
 
-Route::post('/validar', 'FilmeController@listarFilmes');
+// Rota para exibir todos os filmes
+Route::get('/exibirFilmes', 'FormController@exibirFilmes');
 
+Route::get('/filme/edit/{id}', 'FormController@editForm');
+Route::put('/filme/edit/{id}', 'FormController@update');
+
+// Route::delete('/filme/delete/{id}', 'FormController@delete');
+
+
+// Rotas de Atores
 Route::get('/ator', 'FormAtorController@atorForm');
-
-Route::post('/validarAtor', 'AtorController@show');
+Route::post('/validarAtor', 'FormAtorController@validarAtor');

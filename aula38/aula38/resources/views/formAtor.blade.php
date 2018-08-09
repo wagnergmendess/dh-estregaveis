@@ -26,7 +26,7 @@
                 <input type="text" class="form-control" name="last_name" id="titulo"/>
             </div>
             <div class="form-group col-6 m-auto">
-                <label for="classificacao">Classificação</label>
+                <label for="rating">Classificação</label>
                 <input type="text" class="form-control" name="rating" id="classificacao"/>
             </div>
             <br>
