@@ -1,5 +1,5 @@
 @if(isset($edicaoSucesso) && $edicaoSucesso)
-    Filme atualizado com sucesso!
+    Filme atualizado com sucesso! <br>
 @endif
 
 @foreach($filmes as $filme)

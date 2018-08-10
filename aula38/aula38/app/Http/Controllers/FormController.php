@@ -22,12 +22,19 @@ class FormController extends Controller
         return view('editForm')->with('filme', $filme);
     }
 
+    public function deleteForm($id){
+        $filme = Movie::find($id);
+        return view('deleteForm')->with('filme', $filme);
+    }
+
     public function update(Request $request, $id){
         $filme = Movie::find($id);
         $filme->title = $request->input('title');
         $filme->rating = $request->input('rating');
         $filme->awards = $request->input('awards');
         $filme->length = $request->input('length');
+
+        $dataParaBanco = date_create_from_format('Y-m-d', $request->input('release_date'));
 
         $sucesso = $filme->save();
 
@@ -44,27 +51,27 @@ class FormController extends Controller
         }
     }
 
-    // public function delete($id){
-    //     $filme = Movie::find($id);
+    public function deletedMovie($id){
+        $filme = Movie::find($id);
 
-    //     $filme->delete();
+        $filme->delete();
 
-    //     return 'Filme deletado com sucesso';
+        return 'Filme deletado com sucesso';
 
-    //     $sucesso = $filme->save();
+        $sucesso = $filme->delete();
 
-    //     $todosFilmes = Movie::all();
+        $todosFilmes = Movie::all();
 
-    //     if($sucesso){
-    //         return view('todosFilmes')
-    //             ->with('edicaoSucesso', true)
-    //             ->with('filmes', $todosFilmes);
-    //     }else{
-    //         view('todosFilmes')
-    //             ->with('edicaoSucesso', true)
-    //             ->with('filmes', $todosFilmes);
-    //     }
-    // }
+        if($sucesso){
+            return view('todosFilmes')
+                ->with('edicaoSucesso', true)
+                ->with('filmes', $todosFilmes);
+        }else{
+            view('todosFilmes')
+                ->with('edicaoSucesso', true)
+                ->with('filmes', $todosFilmes);
+        }
+    }
 
     public function validar (Request $request){
         $this->validate($request, [
@@ -75,12 +82,14 @@ class FormController extends Controller
             'release_date' => 'date',
         ]);
 
+        $dataParaBanco = date_create_from_format('Y-m-d', $request->input('release_date'));
+
         $usuario = Movie::create([
             'title' => $request->input('title'),
             'rating' => $request->input('rating'),
             'awards' =>$request->input('awards'),
             'length' => $request->input('length'),
-            'release_date' => '2018-08-01'//$request->input('release_date')
+            'release_date' => $dataParaBanco
         ]);
 
         if($usuario->save()){

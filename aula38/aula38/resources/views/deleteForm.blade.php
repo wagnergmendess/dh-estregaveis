@@ -4,7 +4,7 @@
         <title>Adicionar Filme</title>
     </head>
     <body>
-    
+
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
@@ -15,35 +15,31 @@
         </div>
     @endif
 
-    
-
         <h1 align="center">Formulário</h1>
-        <form method="post" action="/validar">
+        <form method="post" action="/filme/delete/{{ $filme->id }}">
         <!-- {{csrf_field()}} -->
         @csrf
+        {{ method_field('DELETE') }}
             <div class="form-group col-6 m-auto">
                 <label for="titulo">Título</label>
-                <input type="text" class="form-control" name="title" id="titulo"/>
+                <input type="text" class="form-control" name="title" id="titulo" value="{{ $filme->title }}"/>
             </div>
             <div class="form-group col-6 m-auto">
                 <label for="classificacao">Classificação</label>
-                <input type="text" class="form-control" name="rating" id="classificacao"/>
+                <input type="text" class="form-control" name="rating" id="classificacao" value="{{ $filme->rating }}"/>
             </div>
             <div class="form-group col-6 m-auto">
                 <label for="premios">Prêmios</label>
-                <input type="text" class="form-control" name="awards" id="premios"/>
+                <input type="text" class="form-control" name="awards" id="premios" value="{{ $filme->awards }}"/>
             </div>
             <div class="form-group col-6 m-auto">
                 <label for="duracao">Duração</label>
-                <input type="text" class="form-control" name="length" id="duracao"/>
+                <input type="text" class="form-control" name="length" id="duracao" value="{{ $filme->length }}"/>
             </div>
-            <div class="form-group col-6 m-auto">
-                <label for="duracao">Data de Estreia</label>
-                <input type="date" class="form-control" name="release_date" id="release_date"/>
-            </div>
+           
             <br>
             <div class="form-group col-6 m-auto">
-              <input type="submit" value="Adicionar Filme" name="submit" class="btn btn-primary"/>
+              <input type="submit" value="Deletar Filme" name="submit" class="btn btn-primary"/>
             </div>
         </form>
     </body>

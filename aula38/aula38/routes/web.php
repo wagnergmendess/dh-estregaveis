@@ -22,12 +22,27 @@ Route::post('/validar', 'FormController@validar');
 // Rota para exibir todos os filmes
 Route::get('/exibirFilmes', 'FormController@exibirFilmes');
 
+// Rota para editar os filmes
 Route::get('/filme/edit/{id}', 'FormController@editForm');
 Route::put('/filme/edit/{id}', 'FormController@update');
 
-// Route::delete('/filme/delete/{id}', 'FormController@delete');
+// Rota para deletar os filmes
+Route::get('/filme/delete/{id}', 'FormController@deleteForm');
+Route::put('/filme/delete/{id}', 'FormController@deletedMovie');
+
 
 
 // Rotas de Atores
 Route::get('/ator', 'FormAtorController@atorForm');
 Route::post('/validarAtor', 'FormAtorController@validarAtor');
+
+// Rota para exibir todos os atores
+Route::get('/exibirAtores', 'FormAtorController@exibirAtores');
+
+// Rota para editar os filmes
+Route::get('/ator/edit/{id}', 'FormAtorController@editAtor');
+Route::put('/ator/edit/{id}', 'FormAtorController@updateAtor');
+
+// Rota para deletar os atores
+Route::get('/ator/delete/{id}', 'FormAtorController@deleteAtor');
+Route::put('/ator/delete/{id}', 'FormAtorController@deletedAtor');

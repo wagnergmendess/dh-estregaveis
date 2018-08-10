@@ -36,7 +36,10 @@
                 <label for="duracao">Duração</label>
                 <input type="text" class="form-control" name="length" id="duracao" value="{{ $filme->length }}"/>
             </div>
-           
+            <div class="form-group col-6 m-auto">
+                <label for="duracao">Data de Estreia</label>
+                <input type="date" class="form-control" name="release_date" id="release_date" value="{{ $filme->getReleaseDateToInput() }}"/>
+            </div>
             <br>
             <div class="form-group col-6 m-auto">
               <input type="submit" value="Atualizar Filme" name="submit" class="btn btn-primary"/>
