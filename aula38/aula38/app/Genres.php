@@ -8,6 +8,4 @@ class Genres extends Model
 {
     protected $table = "genres";
 
-    protected $fillable = ['name', 'raking'];
-
 }
