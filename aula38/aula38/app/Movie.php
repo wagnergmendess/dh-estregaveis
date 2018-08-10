@@ -20,4 +20,8 @@ class Movie extends Model
         return $release_date->format('Y-m-d');
     }
 
+    public function genero(){
+        return $this->hasOne(Genres::class,'id', 'genre_id');
+    }
+
 }
