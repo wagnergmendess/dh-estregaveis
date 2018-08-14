@@ -21,7 +21,7 @@ class Movie extends Model
     }
 
     public function genero(){
-        return $this->hasOne(Genres::class,'id', 'genre_id');
+        return $this->hasOne(Genres::class,'genre_id', 'id');
     }
 
 }

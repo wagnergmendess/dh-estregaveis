@@ -14,7 +14,10 @@ class FormController extends Controller
 
     public function exibirFilmes(){
         $filmes = Movie::all();
-        return view('todosFilmes')->with('filmes', $filmes);
+        var_dump($filmes[0]->genero->name);
+        exit;
+        //return view('mostrarFilmes')->with('filmes', $filmes);
+        //return view('todosFilmes')->with('filmes', $filmes);
     }
 
     public function editForm($id){

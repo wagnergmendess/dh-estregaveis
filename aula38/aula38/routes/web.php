@@ -46,3 +46,8 @@ Route::put('/ator/edit/{id}', 'FormAtorController@updateAtor');
 // Rota para deletar os atores
 Route::get('/ator/delete/{id}', 'FormAtorController@deleteAtor');
 Route::delete('/ator/delete/{id}', 'FormAtorController@deletedAtor');
+
+
+
+// Rotas de Generos
+Route::get('/exibirGeneros/{id}', 'GenerosController@exibir');

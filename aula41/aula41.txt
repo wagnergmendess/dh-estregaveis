@@ -1,0 +1,182 @@
+Criar projeto
+Abrir XAMPP -> Shell -> cd CaminhoDoProjeto -> composer create-project laravel/laravel NomeDoProjeto
+
+-----------------------------//-----------------------------------------
+
+Ativar o servidor do projeto
+Abrir XAMPP -> Shell -> cd CaminhoDoProjeto -> php artisan serve
+
+-----------------------------//-----------------------------------------
+
+Criar Controller
+php artisan make:controller NomeControlador
+
+-----------------------------//-----------------------------------------
+
+Criar Model
+php artisan make:Model NomeModelo
+
+-----------------------------//-----------------------------------------
+
+MVC
+
+Model - Representação da tabela dentro do framework (Laravel) que existe no banco de dados
+View - é oq será exibido/a págin a q será exibida
+Controller - recebe da rot e manda fazer algo (Controla o que vai fazer)
+
+-----------------------------//-----------------------------------------
+
+Caminhos (Rota chama controlador, controlador usa o model e chama a view)
+
+Rota -> Controller -> View
+	    |
+	    v
+	  Model
+
+Model -> View -> Controller
+
+-----------------------------//-----------------------------------------
+
+Request (quando usar o método POST)
+
+Operação
+quando chega algo na rota
+
+-----------------------------//-----------------------------------------
+
+Em uma function, no return vc retorna a view assim: return view("nomeDaView");
+se a view estiver dentro de um diretório/pasta vc retorna a view assim: return view("nomeDoDiretorio.nomeDaView");
+
+
+exemplo:
+
+function exemplo($id, $nome){
+	return view("nomeDoDiretorio.nomeDaView")
+		//->with("nome da variavel q eu to criando dentro do blade", $nome da variavel do controlador);
+		->with("id", $id);
+		->with("nome", $nome);
+}
+
+aqui vc fala q dentro dessa view terão variáveis que ele precisa passar na hora de mostrar a página
+
+-----------------------------//-----------------------------------------
+
+
+Model - Sempre ser nomes no SINGULAR e com LETRA MAIUSCULA no INICIO
+Usado p poder trabalhar com os dados do banco, usa o Eloquent
+-----//-----
+CRUD - Create, Read, Update, Delete
+-----//-----
+exemplo (usando um model p resgatar um filme atraves do id):
+$filme = Filme::find($id);
+
+exemplo (usando um model p resgatar todos os filmes e ordenar por nome):
+$filme = Filme::all();
+$filme->orderBy("nome")->GET();
+-----//-----
+qual tabela o model vai usar:
+
+protected $table = "nomeDaTabela";
+-----//-----
+Para usar o model:
+
+Use App\nomeDoModel;
+
+-----------------------------//-----------------------------------------
+
+Collect (Nome da classe) (array "bombado")
+Biblioteca de coletar dados 
+-----//-----
+$filme = Filme::create();
+$filme -> title = "titulo q eu quero";
+$filme -> save(); //somente aqui eu salvo no bando de dados
+
+ou
+
+$filme = Filme::create(["title" => $request -> input("titulo q eu quero")]);
+$filme -> save(); //somente aqui eu salvo no bando de dados
+-----//-----
+$pessoa = collect([
+	[‘nome’'=> ‘nick’, ‘idade’ => 32],
+	[‘nome’ => ‘daniel’, ‘idade’ => 15],
+	[‘nome’ => ‘francisco’, ‘idade’ => 22],
+]);
+
+$numeros = collect([1, 2, 3, 4, 5]);
+
+// Alguns exemplos
+
+$ListaDeNomes = $pessoa->implode(‘nome’, ‘, ’); //string: “nick, daniel, francisco”
+
+$numeros->push(6); //Adicionou 6 ao final: [1,2,3,4,5,6]
+//coloca um numero no final
+
+$ultimo = $numeros->pop(); //Retorna 6 (o último) e tira da coleção de $numbers
+//mostra o ultimo numero e apaga
+
+$pessoaJson = $pessoa->toJson(); //string: ‘[{“nome”: “nick”, “idade”: 32},{...’
+//representação de um array em texto/ transforma o array em texto
+
+$nomes = $pessoa->pluck(‘nome’); //nova Collection: [‘nick’, ‘daniel’, ‘francisco’]
+
+
+-----------------------------//-----------------------------------------
+
+
+Relações
+
+1 genero possui N filmes
+1:N -> hasMany
+
+1 filme só pode ter 1 genero
+1:1 -> hasOne
+
+N atores pode participar de N filmes
+N:N -> belongstoMany
+
+no seguinte caso:
+
+Pessoa
+-nome
+-fone
+
+Telefone
+-id
+-telefone
+
+Pessoa -> telefone = hasMany (1 pessoa pode ter N telefones)
+Telefone -> pessoa = belongsTo (1 telefone pertence a 1 pessoa) //nesse caso é diferente pq pertence
+N:1 -> belongsTo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
