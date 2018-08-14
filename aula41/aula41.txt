@@ -144,7 +144,7 @@ Telefone
 -id
 -telefone
 
-Pessoa -> telefone = hasMany (1 pessoa pode ter N telefones)
+Pessoa -> telefone = hasMany (1 pessoa pode ter N telefones) - 1:N
 Telefone -> pessoa = belongsTo (1 telefone pertence a 1 pessoa) //nesse caso é diferente pq pertence
 N:1 -> belongsTo
 
