@@ -11,7 +11,7 @@ class FormAtorController extends Controller
     public function atorForm(){
         return view('formAtor');
     }
-
+    
     public function validarAtor (Request $request){
         $this->validate($request, [
             'first_name' => 'required',
@@ -32,10 +32,8 @@ class FormAtorController extends Controller
         }
     }
 
-    // A partir daqui
-
     public function exibirAtores(){
-        $atores = Actors::all();
+        $atores = Actors::paginate(5);
         return view('todosAtores')->with('atores', $atores);
     }
 

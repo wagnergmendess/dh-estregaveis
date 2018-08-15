@@ -30,8 +30,6 @@ Route::put('/filme/edit/{id}', 'FormController@update');
 Route::get('/filme/delete/{id}', 'FormController@deleteForm');
 Route::put('/filme/delete/{id}', 'FormController@deletedMovie');
 
-
-
 // Rotas de Atores
 Route::get('/ator', 'FormAtorController@atorForm');
 Route::post('/validarAtor', 'FormAtorController@validarAtor');
@@ -47,7 +45,8 @@ Route::put('/ator/edit/{id}', 'FormAtorController@updateAtor');
 Route::get('/ator/delete/{id}', 'FormAtorController@deleteAtor');
 Route::delete('/ator/delete/{id}', 'FormAtorController@deletedAtor');
 
-
-
 // Rotas de Generos
 Route::get('/exibirGeneros/{id}', 'GenerosController@exibir');
+Route::get('/filmesGenero', 'GenerosController@formGenres');
+Route::post('/validarGenero', 'GenerosController@validar');
+

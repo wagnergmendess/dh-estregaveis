@@ -13,11 +13,8 @@ class FormController extends Controller
     }
 
     public function exibirFilmes(){
-        $filmes = Movie::all();
-        var_dump($filmes[0]->genero->name);
-        exit;
-        //return view('mostrarFilmes')->with('filmes', $filmes);
-        //return view('todosFilmes')->with('filmes', $filmes);
+        $filmes = Movie::paginate(10);
+        return view('todosFilmes')->with('filmes', $filmes);
     }
 
     public function editForm($id){
@@ -110,4 +107,5 @@ class FormController extends Controller
         // }
 
     }
+    
 }
