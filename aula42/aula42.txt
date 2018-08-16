@@ -1,0 +1,10 @@
+Relações
+
+
+1:1 -> hasOne (NomeDoModel::class "id destino", "id origem");
+
+1:N -> hasMany (NomeDoModel::class "id destino", "id origem");
+
+N:1 -> belongsTo (NomeDoModel::class "id origem", "id destino");
+
+N:N -> belongsToMany(NomeDoModel::class "nome da tabela de ligação (actor_movie)", "id origem", "id destino");
