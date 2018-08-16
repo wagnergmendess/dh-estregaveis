@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Movie;
+use App\Actors;
 
 class FormController extends Controller
 {
@@ -14,6 +15,7 @@ class FormController extends Controller
 
     public function exibirFilmes(){
         $filmes = Movie::paginate(10);
+        $ator = Actors::where(rating>7);
         return view('todosFilmes')->with('filmes', $filmes);
     }
 
