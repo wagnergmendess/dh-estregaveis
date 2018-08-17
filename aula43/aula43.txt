@@ -1,0 +1,17 @@
+IMIGRATION - Uma forma de ter a "receita" da sua tabela dentro do Laravel
+
+Como Criar:
+no shell -> cd caminhoDaPasta -> php artisan make:migration nome_de_migration
+
+----------------------//----------------------------
+Comandos:
+
+php artisan migrate - Executa todas as migrações q ainda n foram executadas
+
+php artisan migrate:status - Exibe o status das migrações (quais foram ou n foram executadas)
+
+php artisan migrate:rollback - "CTRL + Z" (Desfazer a última operação de migração)
+
+php artisan migrate:reset - desfaz tudo
+
+php artisan migrate:refresh - desfaz e volta a executar todas as operações de migração
