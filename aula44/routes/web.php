@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//no shell -> php artisan make:auth
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
