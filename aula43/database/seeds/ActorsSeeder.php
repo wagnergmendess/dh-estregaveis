@@ -18,7 +18,7 @@ class ActorsSeeder extends Seeder
 
         foreach ($movies as $movie){
             //Associamos o filme a 3 atores aleatórios
-            $movie->filmeAtorListado()->sync($actors->random(3));
+            $movie->atoresListado()->sync($actors->random(3));
         }
     }
 }
