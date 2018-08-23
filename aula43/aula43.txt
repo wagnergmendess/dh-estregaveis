@@ -15,3 +15,19 @@ php artisan migrate:rollback - "CTRL + Z" (Desfazer a última operação de migraçã
 php artisan migrate:reset - desfaz tudo
 
 php artisan migrate:refresh - desfaz e volta a executar todas as operações de migração
+
+---------------------//-----------------------------
+Seeders
+
+Como criar: shell -> cd CaminhoDoProjeto -> php artisan make:seeder nomeDoSeeder
+
+Para rodar: php artisan db:seed  OU php artisan migrate -- seed (esse segundo, faz as migrações e já executa o seeders)
+---------------------//-----------------------------
+Factories ("Fabrica" p criar dados fakes, é p teste, cria dados aleatórios)
+
+Como criar: shell -> cd CaminhoDoProjeto -> php artisan make:factory nomeDoFactory --model=NomeModel
+
+Faker - esqueleto de como ele deve fazer o fake quando estiver executando 
+(sempre vai retornar a lista de campo q esta criando)
+
+Para rodar: se colocar no seed->php artisan db:seed;
