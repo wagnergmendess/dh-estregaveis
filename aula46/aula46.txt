@@ -1,0 +1,2 @@
+var - uma variavel q vc vai usar no codigo inteiro
+let - uma variavel q só vai ser usada uma vez (dentro de chaves)
