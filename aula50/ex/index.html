@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Aula 50</title>
+    </head>
+    <body>
+        <form action="http://www.google.com.br" id="formulario">
+            <label>
+                Nome: <input type="text" name="nome" placeholder="Insira seu Nome">
+            </label>
+            &nbsp &nbsp &nbsp 
+            <label>
+                Email: <input type="text" name="email" placeholder="Insira seu Email"><br><br>
+            </label>
+            <label>
+                Senha: <input type="password" name="password" placeholder="Insira uma Senha">
+            </label>
+            &nbsp &nbsp &nbsp 
+            <label>
+                Confirme a senha: <input type="password" name="passwordConfirmation" placeholder="Confirme sua Senha"><br><br>
+            </label>
+            <label>
+                Sexo:
+                <label>
+                    <input type="radio" value="M" name="sexo" id="masc">Masculino
+                </label>
+                <label>
+                    <input type="radio" value="F" name="sexo" id="fem">Feminino
+                </label>
+                <label>
+                    <input type="radio" value="X" name="sexo" id="outro">Outro
+                </label>
+            </label><br><br>
+            <label>
+                <input type="checkbox" name="noticiasYes" value="Y"> Desejo receber notícias.
+            </label><br><br>
+            <button type="submit">Enviar</button>
+            <button type="button" id="LimparTodosDados">Limpar Tudo</button>
+            <button type="button">Ocultar Formulário</button>
+        </form>
+        <p id="mensagem"></p>
+        <ul id="table"></ul>
+
+        <script src="main.js"></script>
+    </body>
+</html>
