@@ -1,0 +1,3 @@
+Criou -> Construtor
+Mostrar -> Render
+Mostrou -> componentDidMount
